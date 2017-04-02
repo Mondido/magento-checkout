@@ -1,0 +1,20 @@
+<?php
+/** @var Mondido_Payment_Block_HostedWindow $this */
+$specificInfo = $this->getSpecificInformation();
+?>
+<?php echo $this->escapeHtml($this->getMethod()->getTitle()); ?>
+
+<?php if ($specificInfo): ?>
+    <table class="data-table admin__table-secondary">
+    <?php foreach ($specificInfo as $label => $value):?>
+        <tr>
+            <th><?php echo $this->escapeHtml($label)?>:</th>
+            <td>
+                <?php /* @noEscape */ echo nl2br($this->escapeHtml(implode("\n", $this->getValueAsArray($value, true))));?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </table>
+<?php endif;?>
+
+<?php echo $this->getChildHtml()?>

@@ -1,0 +1,54 @@
+<?php
+/** @var Mondido_Payment_Block_Checkout $this */
+?>
+<div id="checkout" data-bind="scope:'checkout'" class="checkout-container">
+    <ul>
+        <li id="mondido" data-bind="fadeVisible: isVisible">
+            <div class="step-title" >
+                <?php echo $this->_helper->__('Secure Payment with Mondido'); ?>
+            </div>
+            <div id="checkout-step-mondido" class="step-content" data-role="content">
+                <iframe id="mondido-iframe"
+                        src="<?php echo $this->getMondidoTransactionUrl()?>"
+                        frameborder="0" scrolling="no" style="height: 860px; width: 100%;">
+                </iframe>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+//    jQuery('#manualAddressSubmit').on('click', function () {
+//        var billingUrl = '<?php //echo Mage::getUrl('mondido/checkout/saveBilling');?>//';
+//        var parameters = {
+//            "billing['address_id']" : '',
+//            "billing['firstname']" : jQuery('#first_name').val(),
+//            "billing['middlename']" : '',
+//            "billing['lastname']" : jQuery('#last_name').val(),
+//            "billing['company']" : '',
+//            "billing['email']" : jQuery('#email').val(),
+//            "billing['street'][]" : jQuery('#address_1').val() + ' ' + jQuery('#address_2').val(),
+//            "billing['city']" : jQuery('#city').val(),
+//            "billing['region_id']" : '',
+//            "billing['region']" : '',
+//            "billing['postcode']" : jQuery('#zip').val(),
+//            "billing['country_id']" : jQuery('#country').val(),
+//            "billing['telephone']" : jQuery('#phone').val(),
+//            "billing['fax']" : '',
+//            "billing['customer_password']" : '',
+//            "billing['confirm_password']" : '',
+//            "billing['save_in_address_book']" : '1',
+//            "billing['use_for_shipping']" : '1'
+//    };
+//
+//    console.log(parameters);
+//        jQuery.post(
+//            'http://mondido.loc/mondido/checkout/saveBilling/',
+//            parameters
+//        ).done(function(data, statusText) {
+//            console.log(data);
+//            console.log(statusText);
+//                alert('asdasd');
+//            });
+//    });
+</script>

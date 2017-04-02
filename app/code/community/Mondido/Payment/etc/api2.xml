@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config>
+    <api2>
+        <resource_groups>
+            <catalog translate="title" module="api2">
+                <title>Catalog</title>
+                <sort_order>10</sort_order>
+            </catalog>
+        </resource_groups>
+        <resources>
+            <mondido translate="title" module="api2">
+                <group>catalog</group>
+                <model>mondido/api2_group</model>
+                <title>Groups</title>
+                <sort_order>10</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <update>1</update>
+                        <delete>1</delete>
+                    </admin>
+                    <customer>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <update>1</update>
+                        <delete>1</delete>
+                    </customer>
+                    <guest>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <update>1</update>
+                        <delete>1</delete>
+                    </guest>
+                </privileges>
+                <attributes>
+                    <name>Name</name>
+                </attributes>
+
+                <routes>
+                    <route_entity>
+                        <route>/V1/mondido/transactions/:cartId</route>
+                        <action_type>entity</action_type>
+                    </route_entity>
+                </routes>
+
+                <versions>1</versions>
+            </mondido>
+        </resources>
+    </api2>
+</config>
