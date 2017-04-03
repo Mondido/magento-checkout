@@ -1,0 +1,18 @@
+<script>
+    window.mondidoToggleSolution = function (id, url) {
+        var doScroll = false;
+        Fieldset.toggleCollapse(id, url);
+        if (jQuery(this).hasClassName("open")) {
+            $$(".with-button button.button").each(function(anotherButton) {
+                if (anotherButton != this && jQuery(anotherButton).hasClassName("open")) {
+                    jQuery(anotherButton).click();
+                    doScroll = true;
+                }
+            }.bind(this));
+        }
+        if (doScroll) {
+            var pos = Element.cumulativeOffset(jQuery(this));
+            window.scrollTo(pos[0], pos[1] - 45);
+        }
+    }
+</script>
